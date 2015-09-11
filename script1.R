@@ -94,3 +94,19 @@ for(i in 1:nrow(table)) {
 # using ggplot2
 # docs.ggplot2.org/current
 
+library(ggplot2)
+ggplot(data=table, aes(x=lifeExp, y=gdpPercap)) + geom_point()
+
+ggplot(data=table, aes(x=year, y=lifeExp)) + geom_point()
+
+# stratify by country
+ggplot(data=table, aes(x=year, y=lifeExp, by=country, color=continent)) + geom_point()
+ggplot(data=table, aes(x=year, y=lifeExp, by=country, color=continent)) + geom_line()
+
+ggplot(data=table, aes(x=year, y=lifeExp, by=country)) + geom_line(aes(color=continent)) + geom_point()
+
+# facet wrapping
+ggplot(data=table, aes(x=year, y=lifeExp, color=continent)) +
+  geom_line() + facet_wrap(~ country) + ylab("Life Expectancy (years)")
+
+# check dplyr, tidyr, data.table
