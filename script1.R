@@ -53,6 +53,18 @@ k_to_c <- function(temp) {
 k_to_c(f_to_k(95))
 k_to_c(f_to_k(temp))
 
+# create function to convert F to C
+# using nested functions
+f_to_c <- function(temp ) {
+  out <- k_to_c(f_to_k(temp))
+  return(out)
+}
+
 # checks
-k_to_c(f_to_k(32))
-k_to_c(f_to_k(212))
+f_to_c(32)
+f_to_c(212)
+f_to_c(0)
+
+# pass large argument vectors to a function
+test <- f_to_c(rnorm(1000000))
+summary(test)
