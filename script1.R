@@ -52,3 +52,7 @@ k_to_c <- function(temp) {
 # from f to k to c
 k_to_c(f_to_k(95))
 k_to_c(f_to_k(temp))
+
+# checks
+k_to_c(f_to_k(32))
+k_to_c(f_to_k(212))
