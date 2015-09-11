@@ -68,3 +68,29 @@ f_to_c(0)
 # pass large argument vectors to a function
 test <- f_to_c(rnorm(1000000))
 summary(test)
+
+
+# section 7, challenge 3
+# write a function that pastes a certain output
+best_practice <- c("Write", "programs", "for", "people", "not", "computers")
+
+fence <- function(text=best_practice, wrapper="***") {
+  out <- paste0(wrapper, paste(text,collapse=" "), wrapper)
+  return(out)
+}
+(text1 <- fence(text="hello"))
+
+# loops
+for(i in 1:nrow(table)) {
+  if (table$lifeExp[i] > 50) {
+    print("Excellent")
+  }
+  else {
+    print("Needs improvement")
+  }
+}
+
+# section 8, creating publication quality graphics
+# using ggplot2
+# docs.ggplot2.org/current
+
