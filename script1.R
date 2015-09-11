@@ -29,3 +29,26 @@ data2
 
 # can use droplevels() if subsetting from larger to smaller dataset
 # with factors that arent used in subset dataset
+
+gap2 <- table[table$continent == "Asia",]
+str(gap2)
+gap2 <- droplevels(gap2)
+str(gap2)
+
+# create function that can convert F to C
+f_to_k <- function(temp) {
+  kelvin <- (temp - 32)*(5/9) + 273
+  return(kelvin)
+}
+temp <- seq(50, 100, by=5)
+f_to_k(temp)
+
+k_to_c <- function(temp) {
+  celcius <- temp - 273
+  return(celcius)
+}
+
+# nested functions
+# from f to k to c
+k_to_c(f_to_k(95))
+k_to_c(f_to_k(temp))
