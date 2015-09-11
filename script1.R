@@ -26,3 +26,6 @@ new_person <- data.frame(c("Newton"), c("Vidal"), c(34))
 names(new_person) <- c("firstname", "lastname", "age")
 data2 <- rbind(data,new_person)
 data2
+
+# can use droplevels() if subsetting from larger to smaller dataset
+# with factors that arent used in subset dataset
